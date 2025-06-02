@@ -1,9 +1,7 @@
 package io.github.kolkode.trinetry;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -12,38 +10,24 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class welcome_page extends AppCompatActivity {
-    Button agraybtn;
-    Button newaccbtn;
-    Button alreadybtn;
+public class import_eth extends AppCompatActivity {
+    Button recoverybtn;
+    Button privatebtn;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_welcome_page);
+        setContentView(R.layout.activity_import_eth);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        agraybtn=findViewById(R.id.agraybtn);
-        newaccbtn=findViewById(R.id.newaccbtn);
-        alreadybtn=findViewById(R.id.alreadyaccbtn);
-
-        alreadybtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(welcome_page.this, import_eth.class);
-                startActivity(intent);
-
-            }
-        });
-
-
+        recoverybtn=findViewById(R.id.recoverybtn);
+        privatebtn=findViewById(R.id.privatebtn);
 
 
     }
 }
-

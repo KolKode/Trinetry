@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Trinetry"
         tools:targetApi="31">
         <activity
+            android:name=".import_eth"
+            android:exported="false" />
+        <activity
             android:name=".welcome_page"
             android:exported="true"
             tools:ignore="MissingClass">
@@ -22,6 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
