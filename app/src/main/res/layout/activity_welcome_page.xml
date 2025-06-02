@@ -16,18 +16,18 @@
         android:layout_height="0dp"
         android:scaleType="fitXY"
         android:src="@drawable/trinetry"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- Welcome Text -->
     <TextView
         android:id="@+id/textView"
-        android:layout_width="241dp"
-        android:layout_height="87dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginTop="80dp"
         android:fontFamily="cursive"
         android:gravity="center"
@@ -36,39 +36,42 @@
         android:textColor="#B8ADAD"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- "to" Text -->
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="230dp"
-        android:layout_height="80dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginTop="4dp"
         android:fontFamily="cursive"
         android:gravity="center"
         android:text="to"
         android:textColor="#B8ADAD"
         android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- Checkbox -->
 
     <!-- Create Account Button -->
 
-    <!-- Already have account Button -->
+    <!-- Already Have Account Button -->
 
     <CheckBox
         android:id="@+id/agraybtn"
-        android:layout_width="282dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="408dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="452dp"
+        android:layout_marginEnd="32dp"
         android:buttonTint="#ADA3A3"
         android:gravity="center"
-        android:minWidth="48dp"
         android:minHeight="48dp"
         android:text="I agree to the Terms &amp; Condition"
         android:textColor="#8E8D8D"
@@ -76,37 +79,35 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView2" />
 
     <Button
         android:id="@+id/newaccbtn"
-        android:layout_width="361dp"
-        android:layout_height="57dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:minWidth="48dp"
         android:minHeight="48dp"
         android:text="Create a new account"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/agraybtn" />
 
     <Button
         android:id="@+id/alreadyaccbtn"
-        android:layout_width="364dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:minWidth="48dp"
+        android:layout_marginTop="16dp"
         android:minHeight="48dp"
         android:text="Already have an account"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newaccbtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/newaccbtn" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
