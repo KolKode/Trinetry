@@ -1,0 +1,2 @@
+# Trinetry
+ kichu akta# Trinetry
