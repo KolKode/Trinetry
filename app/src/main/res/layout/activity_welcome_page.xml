@@ -1,92 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/main"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="#261354"
-tools:context=".welcome_page">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#261354"
+    tools:context=".welcome_page">
 
-<!-- Horizontal Guidelines -->
-<androidx.constraintlayout.widget.Guideline
-    android:id="@+id/guideline_start"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:layout_constraintGuide_begin="32dp"/>
+    <!-- Horizontal Guidelines -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="32dp" />
 
-<androidx.constraintlayout.widget.Guideline
-    android:id="@+id/guideline_end"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:layout_constraintGuide_end="32dp"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="32dp" />
 
-<!-- Vertical Guidelines -->
-<androidx.constraintlayout.widget.Guideline
-    android:id="@+id/guideline_top_10"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    app:layout_constraintGuide_percent="0.10"/>
+    <!-- Vertical Guidelines -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
 
-<androidx.constraintlayout.widget.Guideline
-    android:id="@+id/guideline_top_25"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    app:layout_constraintGuide_percent="0.25"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top_25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
 
-<androidx.constraintlayout.widget.Guideline
-    android:id="@+id/guideline_top_40"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    app:layout_constraintGuide_percent="0.40"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top_40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40" />
 
-<androidx.constraintlayout.widget.Guideline
-    android:id="@+id/guideline_top_55"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    app:layout_constraintGuide_percent="0.55"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top_47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47" />
 
-<androidx.constraintlayout.widget.Guideline
-    android:id="@+id/guideline_top_70"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    app:layout_constraintGuide_percent="0.70"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top_55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
 
-<!-- Background Image -->
-<ImageView
-    android:id="@+id/imageView"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:scaleType="fitXY"
-    android:src="@drawable/trinetry"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top_70"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
 
-<!-- Welcome Text -->
+    <!-- Background Image -->
 
-    <!-- "to" Text -->
+    <!-- Welcome Text -->
 
-    <!-- Checkbox -->
-
-    <!-- Create Account Button -->
-
-    <!-- Already Have Account Button -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/trinetry"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="194dp"
-        android:layout_height="181dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="197dp"
+        android:layout_height="199dp"
         android:fontFamily="cursive"
         android:gravity="center"
         android:text="Welcome\nto"
@@ -98,27 +98,38 @@ tools:context=".welcome_page">
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintTop_toTopOf="@id/guideline_top_10" />
 
+    <!-- "to" Text -->
+
+    <!-- Checkbox -->
+
+    <!-- RadioButton -->
+
+    <!-- Create Account Button -->
+
+    <!-- Already Have Account Button -->
+
     <CheckBox
         android:id="@+id/agraybtn"
-        android:layout_width="254dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="288dp"
+        android:layout_width="279dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="256dp"
         android:buttonTint="#ADA3A3"
+        android:gravity="center"
         android:minHeight="48dp"
         android:text="I agree to the Terms &amp; Condition"
         android:textColor="#8E8D8D"
         android:textColorLink="#686464"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline_top_40" />
 
     <Button
         android:id="@+id/newaccbtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="196dp"
         android:minHeight="48dp"
         android:text="Create a new account"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
@@ -130,7 +141,7 @@ tools:context=".welcome_page">
         android:id="@+id/alreadyaccbtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="128dp"
         android:minHeight="48dp"
         android:text="Already have an account"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
