@@ -54,6 +54,14 @@ public class welcome_page extends AppCompatActivity {
             }
         });
 
+        newaccbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(welcome_page.this, new_account.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
