@@ -16,10 +16,10 @@
         android:backgroundTint="#16246F"
         android:scaleType="centerCrop"
         android:src="@drawable/private_them"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -45,8 +45,8 @@
         android:textColor="#A29EAD"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
@@ -100,5 +100,34 @@
         android:textColor="#848EC5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    ⚠
+
+    <TextView
+        android:id="@+id/warning_message"
+        android:layout_width="407dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="40dp"
+        android:background="#AC9CD5"
+        android:fontFamily="sans-serif-medium"
+        android:lineSpacingExtra="4dp"
+        android:padding="12dp"
+        android:text="⚠️Warning: Keep your recovery phrase safe! It’s the master key to your account.
+If lost or shared, you may lose access permanently. We will never ask for it..."
+        android:textColor="#D32F2F"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView4"
+        tools:ignore="NotSibling" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="663dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -42,12 +42,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="53dp" />
+        app:layout_constraintGuide_begin="59dp" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="361dp"
-        android:layout_height="70dp"
+        android:layout_width="368dp"
+        android:layout_height="71dp"
         android:layout_marginTop="4dp"
         android:gravity="center"
         android:text="Secret Recovery Phrase"
@@ -81,7 +81,7 @@
         android:id="@+id/subbtn"
         android:layout_width="137dp"
         android:layout_height="54dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="4dp"
         android:text="Submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,14 +89,13 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="360dp"
-        android:layout_height="428dp"
+        android:layout_width="377dp"
+        android:layout_height="417dp"
         android:layout_margin="06sp"
         android:layout_marginBottom="100dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toStartOf="@+id/guideline13"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline11"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         app:layout_constraintVertical_bias="0.0">
@@ -129,7 +128,7 @@
                 android:hint="2"
                 android:inputType="text"
                 android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A"/>
+                android:textColorHint="#9B9A9A" />
         </LinearLayout>
 
         <LinearLayout
@@ -148,7 +147,7 @@
                 android:hint="3"
                 android:inputType="text"
                 android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A"/>
+                android:textColorHint="#9B9A9A" />
 
             <EditText
                 android:id="@+id/seed4"
@@ -160,7 +159,7 @@
                 android:hint="4"
                 android:inputType="text"
                 android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A"/>
+                android:textColorHint="#9B9A9A" />
         </LinearLayout>
 
         <LinearLayout
@@ -179,7 +178,7 @@
                 android:hint="5"
                 android:inputType="text"
                 android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A"/>
+                android:textColorHint="#9B9A9A" />
 
             <EditText
                 android:id="@+id/seed6"
@@ -191,7 +190,7 @@
                 android:hint="6"
                 android:inputType="text"
                 android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A"/>
+                android:textColorHint="#9B9A9A" />
         </LinearLayout>
 
         <LinearLayout
@@ -210,7 +209,7 @@
                 android:hint="7"
                 android:inputType="text"
                 android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A"/>
+                android:textColorHint="#9B9A9A" />
 
             <EditText
                 android:id="@+id/seed8"
@@ -222,7 +221,7 @@
                 android:hint="8"
                 android:inputType="text"
                 android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A"/>
+                android:textColorHint="#9B9A9A" />
         </LinearLayout>
 
         <LinearLayout
@@ -241,7 +240,7 @@
                 android:hint="9"
                 android:inputType="text"
                 android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A"/>
+                android:textColorHint="#9B9A9A" />
 
             <EditText
                 android:id="@+id/seed10"
@@ -253,7 +252,7 @@
                 android:hint="10"
                 android:inputType="text"
                 android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A"/>
+                android:textColorHint="#9B9A9A" />
         </LinearLayout>
 
         <LinearLayout
@@ -272,7 +271,7 @@
                 android:hint="11"
                 android:inputType="text"
                 android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A"/>
+                android:textColorHint="#9B9A9A" />
 
             <EditText
                 android:id="@+id/seed12"
@@ -284,7 +283,7 @@
                 android:hint="12"
                 android:inputType="text"
                 android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A"/>
+                android:textColorHint="#9B9A9A" />
         </LinearLayout>
     </LinearLayout>
 
@@ -292,12 +291,33 @@
         android:id="@+id/backbtn"
         android:layout_width="102dp"
         android:layout_height="51dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
         android:background="@android:color/transparent"
         android:text="Back"
         android:textColor="#848EC5"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/warning_message"
+        android:layout_width="411dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="560dp"
+        android:layout_marginEnd="21dp"
+        android:background="#AC9CD5"
+        android:fontFamily="sans-serif-medium"
+        android:lineSpacingExtra="4dp"
+        android:padding="12dp"
+        android:text="⚠️ Warning: Keep your recovery phrase safe! It’s the master key to your account.
+If lost or shared, you may lose access permanently. We will never ask for it.."
+        android:textColor="#D32F2F"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView4" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
