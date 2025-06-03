@@ -104,9 +104,9 @@
 
     <TextView
         android:id="@+id/warning_message"
-        android:layout_width="407dp"
-        android:layout_height="68dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="404dp"
+        android:layout_height="89dp"
+        android:layout_marginBottom="16dp"
         android:background="#AC9CD5"
         android:fontFamily="sans-serif-medium"
         android:lineSpacingExtra="4dp"
