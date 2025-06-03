@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Trinetry"
         tools:targetApi="31">
         <activity
+            android:name=".private_key"
+            android:exported="false" />
+        <activity
             android:name=".recovery"
             android:exported="false" />
         <activity
