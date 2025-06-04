@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -12,31 +11,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trinetry"
         tools:targetApi="31">
+
+        <!-- Splash Screen Activity -->
         <activity
-            android:name=".new_account"
-            android:exported="false" />
-        <activity
-            android:name=".private_key"
-            android:exported="false" />
-        <activity
-            android:name=".recovery"
-            android:exported="false" />
-        <activity
-            android:name=".recovary_phrase"
-            android:exported="false" />
-        <activity
-            android:name=".import_eth"
-            android:exported="false" />
-        <activity
-            android:name=".welcome_page"
+            android:name=".splash_screen"
             android:exported="true"
-            tools:ignore="MissingClass">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".welcome_page"
+            android:exported="true" />
+
+        <activity
+            android:name=".new_account"
+            android:exported="false" />
+
+        <activity
+            android:name=".private_key"
+            android:exported="false" />
+
+        <activity
+            android:name=".recovery"
+            android:exported="false" />
+
+        <activity
+            android:name=".import_eth"
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"
