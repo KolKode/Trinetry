@@ -1,4 +1,4 @@
-package io.github.kolkode.trinetry;
+package io.github.kolkode.trinetry.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,10 +12,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import io.github.kolkode.trinetry.R;
+import io.github.kolkode.trinetry.utils.Wallet;
+
 public class recovery extends AppCompatActivity {
 
-    private Button subbtn;
-    private Button backbtn;
+    private Button submitBtn,backBtn;
     private EditText p1txt, p2txt, p3txt, p4txt, p5txt, p6txt,
             p7txt, p8txt, p9txt, p10txt, p11txt, p12txt;
 
@@ -26,8 +28,8 @@ public class recovery extends AppCompatActivity {
         setContentView(R.layout.activity_recovery);
 
         // Find views after layout is set
-        subbtn = findViewById(R.id.subbtn);
-        backbtn = findViewById(R.id.backbtn);
+        submitBtn = findViewById(R.id.subbtn);
+        backBtn = findViewById(R.id.backbtn);
 
         p1txt = findViewById(R.id.seed1);
         p2txt = findViewById(R.id.seed2);
@@ -48,19 +50,24 @@ public class recovery extends AppCompatActivity {
             return insets;
         });
 
-        backbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        backBtn.setOnClickListener(v -> finish());
 
-       subbtn.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-                   Intent intent=new Intent(recovery.this,dashboard.class);
-                   startActivity(intent);
-               }
-       });
+        submitBtn.setOnClickListener(v -> {
+            String mnemonics = p1txt.getText().toString().toLowerCase().trim()+" "+
+                    p2txt.getText().toString().toLowerCase().trim()+" "+
+                    p3txt.getText().toString().toLowerCase().trim()+" "+
+                    p4txt.getText().toString().toLowerCase().trim()+" "+
+                    p5txt.getText().toString().toLowerCase().trim()+" "+
+                    p6txt.getText().toString().toLowerCase().trim()+" "+
+                    p7txt.getText().toString().toLowerCase().trim()+" "+
+                    p8txt.getText().toString().toLowerCase().trim()+" "+
+                    p9txt.getText().toString().toLowerCase().trim()+" "+
+                    p10txt.getText().toString().toLowerCase().trim()+" "+
+                    p11txt.getText().toString().toLowerCase().trim()+" "+
+                    p12txt.getText().toString().toLowerCase().trim()+" ";
+            Wallet.getKeyPairFromSeed(mnemonics);
+            Intent intent=new Intent(recovery.this, dashboard.class);
+            startActivity(intent);
+        });
     }
 }

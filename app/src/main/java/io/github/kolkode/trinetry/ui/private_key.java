@@ -1,10 +1,12 @@
-package io.github.kolkode.trinetry;
+package io.github.kolkode.trinetry.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,11 +14,16 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.material.textfield.TextInputEditText;
+
+import java.security.NoSuchAlgorithmException;
+import java.security.*;
+
+import io.github.kolkode.trinetry.R;
+import io.github.kolkode.trinetry.utils.Wallet;
 
 public class private_key extends AppCompatActivity {
 
-   TextInputEditText entertxt;
+   EditText entertxt;
    Button importbtn;
    Button backbtn;
 
@@ -35,17 +42,17 @@ public class private_key extends AppCompatActivity {
         importbtn=findViewById(R.id.importbtn);
         backbtn=findViewById(R.id.backbtn);
 
-        backbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        backbtn.setOnClickListener(v -> finish());
 
-        importbtn.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                Intent intent=new Intent(private_key.this,dashboard.class);
+        importbtn.setOnClickListener(v -> {
+            String text = entertxt.getText().toString().trim();
+            if(Wallet.isValidPrivate(text)){
+                entertxt.setText(text);
+                Wallet.getKeyPairFromSeed(text);
+                Intent intent=new Intent(private_key.this, dashboard.class);
                 startActivity(intent);
+            }else {
+                Toast.makeText(this, "Please enter a valid Private Key", Toast.LENGTH_SHORT).show();
             }
         });
     }
