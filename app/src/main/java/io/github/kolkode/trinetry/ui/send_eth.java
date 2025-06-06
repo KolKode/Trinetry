@@ -1,4 +1,4 @@
-package io.github.kolkode.trinetry;
+package io.github.kolkode.trinetry.ui;
 
 import android.Manifest;
 import android.content.pm.PackageManager;

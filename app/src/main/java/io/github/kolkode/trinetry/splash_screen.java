@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
+import io.github.kolkode.trinetry.ui.welcome_page;
+
 public class splash_screen extends AppCompatActivity {
 
     private static final long SPLASH_DELAY = 3000; // 3 seconds

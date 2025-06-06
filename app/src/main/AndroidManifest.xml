@@ -20,10 +20,10 @@
         android:theme="@style/Theme.Trinetry"
         tools:targetApi="31">
         <activity
-            android:name=".dashboard"
+            android:name=".ui.dashboard"
             android:exported="false" />
         <activity
-            android:name=".send_eth"
+            android:name=".ui.send_eth"
             android:exported="false" /> <!-- Splash Screen Activity -->
         <activity
             android:name=".splash_screen"
@@ -36,19 +36,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".welcome_page"
+            android:name=".ui.welcome_page"
             android:exported="true" />
         <activity
-            android:name=".new_account"
+            android:name=".ui.new_account"
             android:exported="false" />
         <activity
-            android:name=".private_key"
+            android:name=".ui.private_key"
             android:exported="false" />
         <activity
-            android:name=".recovery"
+            android:name=".ui.recovery"
             android:exported="false" />
         <activity
-            android:name=".import_eth"
+            android:name=".ui.import_eth"
             android:exported="false" />
 
         <meta-data
