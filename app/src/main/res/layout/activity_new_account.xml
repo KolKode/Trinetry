@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#261354"
-    tools:context=".new_account">
+    tools:context=".ui.new_account">
 
     <ImageView
         android:id="@+id/imageView"

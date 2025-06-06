@@ -1,4 +1,4 @@
-package io.github.kolkode.trinetry;
+package io.github.kolkode.trinetry.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import io.github.kolkode.trinetry.R;
 
 public class import_eth extends AppCompatActivity {
     Button recoverybtn;
@@ -50,7 +52,7 @@ public class import_eth extends AppCompatActivity {
         privatebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(import_eth.this,private_key.class);
+                Intent intent=new Intent(import_eth.this, private_key.class);
                 startActivity(intent);
             }
         });

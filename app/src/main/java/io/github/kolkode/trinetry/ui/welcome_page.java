@@ -1,4 +1,4 @@
-package io.github.kolkode.trinetry;
+package io.github.kolkode.trinetry.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import io.github.kolkode.trinetry.R;
 
 public class welcome_page extends AppCompatActivity {
     CheckBox agraybtn;

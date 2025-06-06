@@ -1,4 +1,4 @@
-package io.github.kolkode.trinetry;
+package io.github.kolkode.trinetry.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import io.github.kolkode.trinetry.R;
 
 public class recovery extends AppCompatActivity {
 
@@ -58,7 +60,7 @@ public class recovery extends AppCompatActivity {
        subbtn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-                   Intent intent=new Intent(recovery.this,dashboard.class);
+                   Intent intent=new Intent(recovery.this, dashboard.class);
                    startActivity(intent);
                }
        });

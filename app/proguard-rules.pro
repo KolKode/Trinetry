@@ -19,3 +19,8 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-dontwarn org.web3j.**
+-keep class org.web3j.** { *; }
+-keepclassmembers class * {
+    @org.web3j.** *;
+}

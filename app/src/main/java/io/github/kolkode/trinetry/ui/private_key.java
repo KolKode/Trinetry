@@ -1,4 +1,4 @@
-package io.github.kolkode.trinetry;
+package io.github.kolkode.trinetry.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
+
+import io.github.kolkode.trinetry.R;
 
 public class private_key extends AppCompatActivity {
 
@@ -44,7 +46,7 @@ public class private_key extends AppCompatActivity {
 
         importbtn.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-                Intent intent=new Intent(private_key.this,dashboard.class);
+                Intent intent=new Intent(private_key.this, dashboard.class);
                 startActivity(intent);
             }
         });
