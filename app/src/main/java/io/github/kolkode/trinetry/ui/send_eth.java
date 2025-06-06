@@ -27,7 +27,6 @@ public class send_eth extends AppCompatActivity {
                     Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
                 }
             });
-
     private final ActivityResultLauncher<ScanOptions> qrCodeLauncher =
             registerForActivityResult(new ScanContract(), result -> {
                 if (result.getContents() == null) {
@@ -36,7 +35,6 @@ public class send_eth extends AppCompatActivity {
                     setResult(result.getContents());
                 }
             });
-
     private void setResult(String contents) {
         binding.enteradds.setText(contents);
     }

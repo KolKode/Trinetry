@@ -1,10 +1,10 @@
-package io.github.kolkode.trinetry;
+package io.github.kolkode.trinetry.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
-import io.github.kolkode.trinetry.ui.welcome_page;
+import io.github.kolkode.trinetry.R;
 
 public class splash_screen extends AppCompatActivity {
 

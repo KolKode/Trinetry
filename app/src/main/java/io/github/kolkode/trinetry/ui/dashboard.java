@@ -1,5 +1,6 @@
 package io.github.kolkode.trinetry.ui;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ import io.github.kolkode.trinetry.R;
 public class dashboard extends AppCompatActivity {
     Button send;
 
+    @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +28,7 @@ public class dashboard extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        send=findViewById(R.id.button);
+        send=findViewById(R.id.sendbtn);
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
