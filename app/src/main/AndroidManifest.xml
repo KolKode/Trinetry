@@ -1,5 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -11,34 +18,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trinetry"
         tools:targetApi="31">
-
-        <!-- Splash Screen Activity -->
+        <activity
+            android:name=".dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".send_eth"
+            android:exported="false" /> <!-- Splash Screen Activity -->
         <activity
             android:name=".splash_screen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".welcome_page"
             android:exported="true" />
-
         <activity
             android:name=".new_account"
             android:exported="false" />
-
         <activity
             android:name=".private_key"
             android:exported="false" />
-
         <activity
             android:name=".recovery"
             android:exported="false" />
-
         <activity
             android:name=".import_eth"
             android:exported="false" />
@@ -46,6 +53,13 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            tools:ignore="DiscouragedApi"
+            tools:replace="android:screenOrientation" />
     </application>
 
 </manifest>

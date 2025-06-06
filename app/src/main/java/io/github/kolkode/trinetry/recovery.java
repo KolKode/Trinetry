@@ -55,5 +55,12 @@ public class recovery extends AppCompatActivity {
             }
         });
 
+       subbtn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+                   Intent intent=new Intent(recovery.this,dashboard.class);
+                   startActivity(intent);
+               }
+       });
     }
 }
