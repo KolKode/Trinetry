@@ -3,9 +3,7 @@ package io.github.kolkode.trinetry.ui;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 import io.github.kolkode.trinetry.R;
 
 public class dashboard extends AppCompatActivity {
-    Button send;
+    ImageButton send;
 
     @SuppressLint({ "WrongViewCast", "MissingInflatedId" })
     @Override
