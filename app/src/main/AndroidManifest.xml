@@ -20,6 +20,9 @@
         android:theme="@style/Theme.Trinetry"
         tools:targetApi="31">
         <activity
+            android:name=".ui.receive_eth"
+            android:exported="false" />
+        <activity
             android:name=".ui.dashboard"
             android:exported="false" />
         <activity
