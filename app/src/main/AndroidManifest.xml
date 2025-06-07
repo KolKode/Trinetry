@@ -26,7 +26,7 @@
             android:name=".ui.send_eth"
             android:exported="false" /> <!-- Splash Screen Activity -->
         <activity
-            android:name=".splash_screen"
+            android:name=".ui.splash_screen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>

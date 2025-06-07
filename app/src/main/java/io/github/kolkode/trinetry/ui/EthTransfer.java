@@ -1,4 +1,4 @@
-package io.github.kolkode.trinetry.utils;
+package io.github.kolkode.trinetry.ui;
 import io.github.kolkode.trinetry.BuildConfig;
 
 import android.util.Log;
