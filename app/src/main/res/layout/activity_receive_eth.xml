@@ -40,11 +40,20 @@
     <!-- Network -->
 
     <!-- QR Code -->
+
+    <!-- Account label -->
+
+    <!-- Wallet Address -->
+
+    <!-- Copy Button -->
+
+    <!-- Guidelines -->
+
     <TextView
         android:id="@+id/network"
         android:layout_width="177dp"
         android:layout_height="33dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="Ethereum"
         android:textColor="#AAAAAA"
@@ -58,32 +67,18 @@
         android:id="@+id/qrCode"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="76dp"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/network" />
 
-    <!-- Account label -->
-    <TextView
-        android:id="@+id/accountLabel"
-        android:layout_width="110dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        android:text="Account 1"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/qrCode" />
-
-    <!-- Wallet Address -->
     <TextView
         android:id="@+id/walletAddress"
         android:layout_width="367dp"
         android:layout_height="68dp"
+        android:layout_marginTop="92dp"
         android:gravity="center"
         android:hint="Address"
         android:padding="8dp"
@@ -93,11 +88,8 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/accountLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/qrCode" />
 
-    <!-- Copy Button -->
-
-    <!-- Guidelines -->
     <Button
         android:id="@+id/copyBtn"
         android:layout_width="wrap_content"

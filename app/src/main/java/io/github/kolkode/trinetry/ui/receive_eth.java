@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import io.github.kolkode.trinetry.R;
+import io.github.kolkode.trinetry.utils.Wallet;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
@@ -21,12 +22,11 @@ import com.google.zxing.qrcode.QRCodeWriter;
 
 public class receive_eth extends AppCompatActivity {
 
-    private ImageView qrCodeImageView;
-    private TextView walletAddressTextView;
-    private TextView accountLabelTextView;
-    private Button copyButton;
+    ImageView qrCodeImageView;
+    TextView walletAddressTextView;
+    Button copyButton;
 
-    private final String walletAddressFromApi = "0x91D1B97d68A06C93B8cE2C1B9250a0Aff2B59C35";
+    private final String walletAddressFromApi = Wallet.getPublicAddress();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +36,10 @@ public class receive_eth extends AppCompatActivity {
         // Bind UI elements
         qrCodeImageView = findViewById(R.id.qrCode);
         walletAddressTextView = findViewById(R.id.walletAddress);
-        accountLabelTextView = findViewById(R.id.accountLabel);
         copyButton = findViewById(R.id.copyBtn);
 
         // ✅ Set values
         walletAddressTextView.setText(walletAddressFromApi);
-        accountLabelTextView.setText("Account 1");
 
         //Generate QR code
         generateQRCode(walletAddressFromApi);
