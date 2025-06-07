@@ -1,5 +1,6 @@
 package io.github.kolkode.trinetry.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -25,6 +26,10 @@ public class new_account extends AppCompatActivity {
             return insets;
         });
         createAccBtn = findViewById(R.id.createaccbtn);
-        createAccBtn.setOnClickListener(v -> Wallet.generateKeyPairWithSeed());
+        createAccBtn.setOnClickListener(v -> {
+            Wallet.generateKeyPairWithSeed();
+            Intent intent = new Intent(new_account.this,dashboard.class);
+            startActivity(intent);
+        });
     }
 }
