@@ -2,7 +2,6 @@ package io.github.kolkode.trinetry.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -64,7 +63,7 @@ public class recovery extends AppCompatActivity {
                     p9txt.getText().toString().toLowerCase().trim()+" "+
                     p10txt.getText().toString().toLowerCase().trim()+" "+
                     p11txt.getText().toString().toLowerCase().trim()+" "+
-                    p12txt.getText().toString().toLowerCase().trim()+" ";
+                    p12txt.getText().toString().toLowerCase().trim();
             Wallet.getKeyPairFromSeed(mnemonics);
             Intent intent=new Intent(recovery.this, dashboard.class);
             startActivity(intent);

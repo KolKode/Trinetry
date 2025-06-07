@@ -115,6 +115,7 @@
                 android:ems="10"
                 android:hint="1"
                 android:inputType="text"
+                android:textAlignment="center"
                 android:textColor="#D1CED9"
                 android:textColorHint="#9B9A9A" />
 
@@ -127,6 +128,7 @@
                 android:ems="10"
                 android:hint="2"
                 android:inputType="text"
+                android:textAlignment="center"
                 android:textColor="#D1CED9"
                 android:textColorHint="#9B9A9A" />
         </LinearLayout>
@@ -146,6 +148,7 @@
                 android:ems="10"
                 android:hint="3"
                 android:inputType="text"
+                android:textAlignment="center"
                 android:textColor="#D1CED9"
                 android:textColorHint="#9B9A9A" />
 
@@ -158,6 +161,7 @@
                 android:ems="10"
                 android:hint="4"
                 android:inputType="text"
+                android:textAlignment="center"
                 android:textColor="#D1CED9"
                 android:textColorHint="#9B9A9A" />
         </LinearLayout>
@@ -177,6 +181,7 @@
                 android:ems="10"
                 android:hint="5"
                 android:inputType="text"
+                android:textAlignment="center"
                 android:textColor="#D1CED9"
                 android:textColorHint="#9B9A9A" />
 
@@ -189,6 +194,7 @@
                 android:ems="10"
                 android:hint="6"
                 android:inputType="text"
+                android:textAlignment="center"
                 android:textColor="#D1CED9"
                 android:textColorHint="#9B9A9A" />
         </LinearLayout>
@@ -208,6 +214,7 @@
                 android:ems="10"
                 android:hint="7"
                 android:inputType="text"
+                android:textAlignment="center"
                 android:textColor="#D1CED9"
                 android:textColorHint="#9B9A9A" />
 
@@ -220,6 +227,7 @@
                 android:ems="10"
                 android:hint="8"
                 android:inputType="text"
+                android:textAlignment="center"
                 android:textColor="#D1CED9"
                 android:textColorHint="#9B9A9A" />
         </LinearLayout>
@@ -239,6 +247,7 @@
                 android:ems="10"
                 android:hint="9"
                 android:inputType="text"
+                android:textAlignment="center"
                 android:textColor="#D1CED9"
                 android:textColorHint="#9B9A9A" />
 
@@ -251,6 +260,7 @@
                 android:ems="10"
                 android:hint="10"
                 android:inputType="text"
+                android:textAlignment="center"
                 android:textColor="#D1CED9"
                 android:textColorHint="#9B9A9A" />
         </LinearLayout>
@@ -270,6 +280,7 @@
                 android:ems="10"
                 android:hint="11"
                 android:inputType="text"
+                android:textAlignment="center"
                 android:textColor="#D1CED9"
                 android:textColorHint="#9B9A9A" />
 
@@ -282,6 +293,7 @@
                 android:ems="10"
                 android:hint="12"
                 android:inputType="text"
+                android:textAlignment="center"
                 android:textColor="#D1CED9"
                 android:textColorHint="#9B9A9A" />
         </LinearLayout>

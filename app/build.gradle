@@ -1,7 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
 }
-
+def secretsProperties = new Properties()
+def secretsPropertiesFile = rootProject.file("secrets.properties")
+if (secretsPropertiesFile.exists()) {
+    secretsProperties.load(new FileInputStream(secretsPropertiesFile))
+}
 android {
     namespace 'io.github.kolkode.trinetry'
     compileSdk 35
@@ -33,8 +37,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "ALCHEMY_API", "\"${project.findProperty("ALCHEMY_API")}\""
-        buildConfigField "String", "ETHERSCAN_API", "\"${project.findProperty("ETHERSCAN_API")}\""
+        buildConfigField "String", "ALCHEMY_API", "\"${secretsProperties['ALCHEMY_API']}\""
+        buildConfigField "String", "ETHERSCAN_API", "\"${secretsProperties['ETHERSCAN_API']}\""
     }
 
     buildTypes {

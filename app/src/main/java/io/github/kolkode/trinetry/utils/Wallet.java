@@ -1,13 +1,27 @@
 package io.github.kolkode.trinetry.utils;
 
+import android.util.Log;
+
 import org.web3j.crypto.Bip32ECKeyPair;
 import org.web3j.crypto.Credentials;
 import org.web3j.crypto.MnemonicUtils;
 import org.web3j.crypto.WalletUtils;
+import org.web3j.protocol.Web3j;
+import org.web3j.protocol.core.DefaultBlockParameterName;
+import org.web3j.protocol.http.HttpService;
+import org.web3j.utils.Convert;
 
+import java.io.IOException;
+import java.math.BigInteger;
 import java.security.*;
 
+import io.github.kolkode.trinetry.BuildConfig;
+
 public class Wallet {
+    private static final String ALCHEMY_API = BuildConfig.ALCHEMY_API;
+    private static final String ALCHEMY_URL = "https://eth-sepolia.g.alchemy.com/v2/"+ALCHEMY_API;
+    private static final String ETHERSCAN_API = BuildConfig.ETHERSCAN_API;
+    private static final String ETHERSCAN_URL = "https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey="+ETHERSCAN_API;
     private static String publicAddress,privateAddress,mnemonics;
 
     public static String getPublicAddress() {
@@ -73,4 +87,17 @@ public class Wallet {
         mnemonics = mne;
     }
 
+    public static String getBalance() throws IOException {
+        String address = publicAddress;
+        Web3j web3j = Web3j.build(new HttpService(ALCHEMY_URL));
+        BigInteger wie = null;
+        try {
+            wie = web3j.ethGetBalance(address, DefaultBlockParameterName.LATEST).send().getBalance();
+
+        } catch (IOException e) {
+            Log.d("BalanceError",String.valueOf(e.getMessage()));
+        }
+        assert wie != null;
+        return String.valueOf(Convert.fromWei(wie.toString(), Convert.Unit.ETHER));
+    }
 }

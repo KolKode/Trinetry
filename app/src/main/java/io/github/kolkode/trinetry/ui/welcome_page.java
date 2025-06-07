@@ -3,7 +3,6 @@ package io.github.kolkode.trinetry.ui;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 
@@ -46,22 +45,15 @@ public class welcome_page extends AppCompatActivity {
             newaccbtn.setEnabled(isChecked);
             alreadybtn.setEnabled(isChecked);
         });
-
         // Button click listeners
-        alreadybtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(welcome_page.this, import_eth.class);
-                startActivity(intent);
-            }
+        alreadybtn.setOnClickListener(v -> {
+            Intent intent = new Intent(welcome_page.this, import_eth.class);
+            startActivity(intent);
         });
 
-        newaccbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(welcome_page.this, new_account.class);
-                startActivity(intent);
-            }
+        newaccbtn.setOnClickListener(v -> {
+            Intent intent = new Intent(welcome_page.this, new_account.class);
+            startActivity(intent);
         });
 
 
