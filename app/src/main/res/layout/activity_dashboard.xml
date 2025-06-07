@@ -20,7 +20,7 @@
         android:src="@drawable/base"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -54,15 +54,6 @@
         app:layout_constraintTop_toBottomOf="@id/welcomeText" />
 
     <!-- ETH Logo -->
-    <ImageView
-        android:id="@+id/ethLogo"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/eth_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/accountAddress" />
 
     <!-- Balance -->
 
@@ -71,7 +62,6 @@
         android:id="@+id/balance"
         android:layout_width="376dp"
         android:layout_height="82dp"
-        android:layout_marginTop="20dp"
         android:gravity="center"
         android:hint="Balance"
         android:textColor="@android:color/white"
@@ -80,7 +70,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ethLogo" />
+        tools:layout_editor_absoluteY="155dp" />
 
     <LinearLayout
         android:id="@+id/sendLayout"
@@ -131,25 +121,13 @@
         android:id="@+id/tranc"
         android:layout_width="372dp"
         android:layout_height="284dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:hint="Transactions will be shown here"
         android:textColorHint="#BAB4C8"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/transactionsTitle" />
-
-    <ImageView
-        android:id="@+id/sendbtn"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/bg"
-        android:padding="12dp"
-        android:src="@drawable/send"
-        android:tint="@android:color/white"
-        app:layout_constraintStart_toStartOf="@+id/guideline9"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -172,17 +150,27 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="16dp" />
 
-    <ImageView
-        android:id="@+id/receivebtn"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="96dp"
-        android:background="@drawable/bg"
-        android:padding="12dp"
-        android:src="@drawable/receive"
-        android:tint="@android:color/white"
+    <Button
+        android:id="@+id/sendBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="28dp"
+        android:text="Send"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toBottomOf="@+id/balance" />
+
+    <Button
+        android:id="@+id/recieveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Recieve"
+        app:layout_constraintEnd_toEndOf="@+id/receiveLayout"
+        app:layout_constraintHorizontal_bias="0.852"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toBottomOf="@+id/balance" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

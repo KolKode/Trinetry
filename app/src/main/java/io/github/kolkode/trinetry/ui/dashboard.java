@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +18,7 @@ import io.github.kolkode.trinetry.R;
 public class dashboard extends AppCompatActivity {
     Button send;
 
-    @SuppressLint({"WrongViewCast", "MissingInflatedId"})
+    @SuppressLint({ "WrongViewCast", "MissingInflatedId" })
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,14 +29,11 @@ public class dashboard extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        send=findViewById(R.id.sendbtn);
-        send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    Intent intent=new Intent(dashboard.this, send_eth.class);
-                    startActivity(intent);
-                }
 
+        send = findViewById(R.id.sendBtn);
+        send.setOnClickListener(v -> {
+            Intent intent = new Intent(dashboard.this, send_eth.class);
+            startActivity(intent);
         });
     }
 }
