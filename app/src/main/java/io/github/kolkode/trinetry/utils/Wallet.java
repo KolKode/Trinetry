@@ -23,6 +23,7 @@ public class Wallet {
     private static final String ETHERSCAN_API = BuildConfig.ETHERSCAN_API;
     private static final String ETHERSCAN_URL = "https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey="+ETHERSCAN_API;
     private static String publicAddress,privateAddress,mnemonics;
+    public static String balance;
 
     public static String getPublicAddress() {
         return publicAddress;
@@ -56,6 +57,9 @@ public class Wallet {
             0
     };
 
+    public static boolean isValidAddress(String address) {
+        return WalletUtils.isValidAddress(address);
+    }
     public static boolean isValidPrivate(String privateAddr){
         return WalletUtils.isValidPrivateKey(privateAddr);
     }

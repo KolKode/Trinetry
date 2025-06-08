@@ -26,9 +26,25 @@ import okhttp3.Response;
 public class EthTransfer {
     private static final String ALCHEMY_API = BuildConfig.ALCHEMY_API;
     private static final String ETHERSCAN_API = BuildConfig.ETHERSCAN_API;
-    public static String baseGas,safeGas,proposedGas,fastGas;
+    private static String baseGas,safeGas,proposedGas,fastGas;
     private static final String ALCHEMY_URL = "https://eth-sepolia.g.alchemy.com/v2/"+ALCHEMY_API;
     private static final String ETHERSCAN_URL = "https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey="+ETHERSCAN_API;
+
+    public static String getBaseGas() {
+        return baseGas;
+    }
+
+    public static String getSafeGas() {
+        return safeGas;
+    }
+
+    public static String getProposedGas() {
+        return proposedGas;
+    }
+
+    public static String getFastGas() {
+        return fastGas;
+    }
 
     public void getGas() throws IOException {
         OkHttpClient okHttpClient = new OkHttpClient();
@@ -53,7 +69,8 @@ public class EthTransfer {
         }
     }
 
-    public static String sendEth(String privateKey, String toAddress, BigDecimal amountInEther,String gasInWie) {
+    public static String sendEth(String toAddress, BigDecimal amountInEther, String gasInWie) {
+        String privateKey = Wallet.getPrivateAddress();
         try {
             Web3j web3 = Web3j.build(new HttpService(ALCHEMY_URL));
             Credentials credentials = Credentials.create(privateKey);

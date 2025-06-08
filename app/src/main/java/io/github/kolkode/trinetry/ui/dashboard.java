@@ -46,7 +46,10 @@ public class dashboard extends AppCompatActivity {
                     Toast.makeText(this,"Problem to get the Balance",Toast.LENGTH_SHORT).show();
                 }
                 String finalEth = eth;
-                runOnUiThread(() -> balance.setText(finalEth + "\nETH"));
+                runOnUiThread(() -> {
+                    Wallet.balance = finalEth;
+                    balance.setText(finalEth + "\nETH");
+                });
             }).start();
         } catch (Exception e) {
             Log.d("DashBoard_GetBalance",String.valueOf(e.getMessage()));

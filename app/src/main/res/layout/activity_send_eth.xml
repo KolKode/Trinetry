@@ -25,9 +25,9 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/enteradds"
-        android:layout_width="331dp"
-        android:layout_height="65dp"
+        android:id="@+id/sendingAddress"
+        android:layout_width="314dp"
+        android:layout_height="64dp"
         android:layout_marginTop="36dp"
         android:hint="To : Enter Address"
         android:inputType="text"
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
-        android:id="@+id/enteramm"
+        android:id="@+id/sendingAmmount"
         android:layout_width="382dp"
         android:layout_height="58dp"
         android:layout_marginTop="348dp"
@@ -53,21 +53,21 @@
         app:layout_constraintEnd_toEndOf="@id/guideline15"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline12"
-        app:layout_constraintTop_toBottomOf="@id/enteradds" />
+        app:layout_constraintTop_toBottomOf="@id/sendingAddress" />
 
     <Button
-        android:id="@+id/nextbtn"
+        android:id="@+id/transferBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="116dp"
         android:backgroundTint="#5C5C9D"
         android:enabled="true"
-        android:text="Next"
+        android:text="Transfer"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/enteramm" />
+        app:layout_constraintTop_toBottomOf="@id/sendingAmmount" />
 
     <TextView
         android:id="@+id/textView9"
@@ -75,7 +75,7 @@
         android:layout_height="24dp"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Send to"
+        android:text="Send To"
         android:textColor="#CCCFE2"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -84,7 +84,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/myAddress"
         android:layout_width="225dp"
         android:layout_height="40dp"
         android:layout_marginTop="44dp"
@@ -93,14 +93,14 @@
         android:textColorHint="#808290"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enteramm" />
+        app:layout_constraintTop_toBottomOf="@+id/sendingAmmount" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/scanbtn"
-        android:layout_width="61dp"
-        android:layout_height="56dp"
+        android:layout_width="62dp"
+        android:layout_height="66dp"
         android:layout_marginTop="76dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="16dp"
         android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -108,7 +108,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/gasPrice"
         android:layout_width="282dp"
         android:layout_height="53dp"
         android:layout_marginBottom="12dp"
@@ -120,7 +120,7 @@
         android:textColorHint="#909B95"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/enteramm"
+        app:layout_constraintBottom_toTopOf="@+id/sendingAmmount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent" />
@@ -149,10 +149,10 @@
                 android:text="Base Gas"
                 android:textColor="#E2E4EB"
                 android:textSize="20sp"
-                android:textStyle="italic" />
+                android:textStyle="bold|italic" />
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/baseGas"
                 android:layout_width="wrap_content"
                 android:layout_height="55dp"
                 android:layout_weight="1"
@@ -178,10 +178,10 @@
                 android:text="Safe Gas"
                 android:textColor="#E2E4EB"
                 android:textSize="20sp"
-                android:textStyle="italic" />
+                android:textStyle="bold|italic" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/safeGas"
                 android:layout_width="wrap_content"
                 android:layout_height="55dp"
                 android:layout_weight="1"
@@ -200,17 +200,17 @@
 
             <TextView
                 android:id="@+id/textView17"
-                android:layout_width="78dp"
+                android:layout_width="97dp"
                 android:layout_height="55dp"
                 android:layout_weight=".4"
                 android:gravity="center|start"
                 android:text="Proposed Gas"
                 android:textColor="#E2E4EB"
                 android:textSize="20sp"
-                android:textStyle="italic" />
+                android:textStyle="bold|italic" />
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/proposedGas"
                 android:layout_width="wrap_content"
                 android:layout_height="55dp"
                 android:layout_weight="1"
@@ -236,10 +236,10 @@
                 android:text="Fast Gas"
                 android:textColor="#E2E4EB"
                 android:textSize="20sp"
-                android:textStyle="italic" />
+                android:textStyle="bold|italic" />
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/fastGas"
                 android:layout_width="wrap_content"
                 android:layout_height="55dp"
                 android:layout_weight="1"
