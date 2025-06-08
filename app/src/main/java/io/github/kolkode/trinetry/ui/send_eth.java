@@ -100,7 +100,7 @@ public class send_eth extends AppCompatActivity {
                 safeGas.setText(EthTransfer.getSafeGas()+" GWEI");
                 proposedGas.setText(EthTransfer.getProposedGas()+" GWEI");
                 fastGas.setText(EthTransfer.getFastGas()+" GWEI");
-                gasPrice.setText(proposedGas.getText().toString());
+                gasPrice.setText(EthTransfer.getProposedGas());
             });
         }).start();
 
