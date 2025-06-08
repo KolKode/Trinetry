@@ -87,7 +87,7 @@
         android:id="@+id/myAddress"
         android:layout_width="225dp"
         android:layout_height="40dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:hint="Your account address"
         android:textColorHint="#808290"
@@ -265,6 +265,17 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_end="16dp" />
+
+    <TextView
+        android:id="@+id/transactionHash"
+        android:layout_width="308dp"
+        android:layout_height="40dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/transferBtn"
+        app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintStart_toStartOf="@+id/guideline12"
+        app:layout_constraintTop_toBottomOf="@+id/myAddress" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

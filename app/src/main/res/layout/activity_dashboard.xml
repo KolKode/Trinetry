@@ -111,18 +111,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sendLayout" />
 
-    <TextView
-        android:id="@+id/tranc"
-        android:layout_width="372dp"
-        android:layout_height="284dp"
-        android:layout_marginTop="20dp"
-        android:hint="Transactions will be shown here"
-        android:textColorHint="#BAB4C8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/transactionsTitle" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
         android:layout_width="wrap_content"
@@ -225,5 +213,19 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="205dp" />     <!-- Makes image fit nicely -->
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTransactionHistory"
+        android:layout_width="379dp"
+        android:layout_height="248dp"
+        android:layout_marginStart="24dp"
+        android:padding="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toBottomOf="@+id/transactionsTitle"
+        app:layout_constraintVertical_bias="0.319" />  <!-- fixed height so it scrolls only here -->
+    android:scrollbars="vertical"
+    android:layout_marginTop="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

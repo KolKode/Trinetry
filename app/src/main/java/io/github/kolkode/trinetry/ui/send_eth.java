@@ -32,7 +32,7 @@ import io.github.kolkode.trinetry.utils.Wallet;
 
 public class send_eth extends AppCompatActivity {
     EthTransfer ethTransfer = new EthTransfer();
-    TextView myAddress,baseGas,safeGas,proposedGas,fastGas;
+    TextView myAddress,baseGas,safeGas,proposedGas,fastGas,transactionHash;
     EditText gasPrice,sendingAmmount,sendingAddress;
     Button transferButton;
 
@@ -87,6 +87,7 @@ public class send_eth extends AppCompatActivity {
         sendingAddress=findViewById(R.id.sendingAddress);
         sendingAmmount=findViewById(R.id.sendingAmmount);
         transferButton=findViewById(R.id.transferBtn);
+        transactionHash=findViewById(R.id.transactionHash);
 
         myAddress.setText(Wallet.getPublicAddress());
         new Thread(()->{
@@ -128,7 +129,15 @@ public class send_eth extends AppCompatActivity {
 //                        Toast.makeText(this, "Insufficient balance to cover gas + amount", Toast.LENGTH_SHORT).show();
 //                    } else {
                     new Thread(()->{
-                        EthTransfer.sendEth(sAdd, new BigDecimal(sA), gP);
+                        String hash = EthTransfer.sendEth(sAdd, new BigDecimal(sA), gP);
+                        runOnUiThread(()->{
+                            if (hash == null){
+                                Toast.makeText(this, "transaction failed", Toast.LENGTH_SHORT).show();
+                            }else {
+                                Toast.makeText(this, "Transaction successful", Toast.LENGTH_SHORT).show();
+                                transactionHash.setText(hash);
+                            }
+                        });
                     }).start();
 //                    }
                 } catch (Exception e) {

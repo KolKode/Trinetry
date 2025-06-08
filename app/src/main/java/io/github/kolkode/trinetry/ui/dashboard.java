@@ -12,10 +12,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import io.github.kolkode.trinetry.R;
+//import io.github.kolkode.trinetry.utils.EthTransaction;
+//import io.github.kolkode.trinetry.utils.TransactionAdapter;
 import io.github.kolkode.trinetry.utils.Wallet;
 
 public class dashboard extends AppCompatActivity {
@@ -63,5 +69,16 @@ public class dashboard extends AppCompatActivity {
             Intent intent=new Intent(dashboard.this,receive_eth.class);
             startActivity(intent);
         });
+
+
+//        RecyclerView rvTransactionHistory = findViewById(R.id.rvTransactionHistory);
+//        rvTransactionHistory.setLayoutManager(new LinearLayoutManager(this));
+//
+//// Initialize your list somewhere in the Activity:
+//        List<EthTransaction> transactionList = new ArrayList<>();
+//
+//// Create adapter and set to RecyclerView
+//        TransactionAdapter adapter = new TransactionAdapter(transactionList);
+//        rvTransactionHistory.setAdapter(adapter);
     }
 }

@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import io.github.kolkode.trinetry.BuildConfig;
+import io.github.kolkode.trinetry.database.SecureWalletStorage;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -35,6 +36,10 @@ public class Wallet {
     public static String balance;
 
     public static List<JSONObject> transactionHistory = new CopyOnWriteArrayList<>();
+
+    public Wallet() throws Exception {
+    }
+
     public static List<JSONObject> getTransactionHistory() {
         return transactionHistory;
     }
@@ -81,6 +86,12 @@ public class Wallet {
         privateAddress = privateaddr;
         Credentials credentials = Credentials.create(privateaddr);
         publicAddress = credentials.getAddress();
+        try {
+            WalletManager walletManager = null;
+            walletManager.saveWalletData(privateAddress,publicAddress,null);
+        }catch (Exception e){
+            Log.d("Store Data","There is some error while saving the data:\t"+e.getMessage());
+        }
     }
     public static void getKeyPairFromSeed(String memonics) {
         byte[] seed = MnemonicUtils.generateSeed(memonics, "");
@@ -90,6 +101,12 @@ public class Wallet {
         mnemonics = memonics;
         publicAddress = credentials.getAddress();
         privateAddress = "0x"+credentials.getEcKeyPair().getPrivateKey().toString(16);
+        try {
+            WalletManager walletManager = null;
+            walletManager.saveWalletData(privateAddress,publicAddress,mnemonics);
+        }catch (Exception e){
+            Log.d("Store Data","There is some error while saving the data:\t"+e.getMessage());
+        }
     }
 
     public static void generateKeyPairWithSeed() {
@@ -103,6 +120,12 @@ public class Wallet {
         publicAddress = credentials.getAddress();
         privateAddress = credentials.getEcKeyPair().getPrivateKey().toString(16);
         mnemonics = mne;
+        try {
+            WalletManager walletManager = null;
+            walletManager.saveWalletData(privateAddress,publicAddress,mnemonics);
+        }catch (Exception e){
+            Log.d("Store Data","There is some error while saving the data:\t"+e.getMessage());
+        }
     }
 
     public static void fetchTransactionHistory() {
