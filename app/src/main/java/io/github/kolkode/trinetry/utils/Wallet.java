@@ -1,5 +1,6 @@
 package io.github.kolkode.trinetry.utils;
 
+import android.content.Context;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -16,7 +17,6 @@ import org.web3j.utils.Convert;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -82,18 +82,18 @@ public class Wallet {
     public static boolean isValidPrivate(String privateAddr){
         return WalletUtils.isValidPrivateKey(privateAddr);
     }
-    public static void getKeys(String privateaddr) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, NoSuchProviderException {
+    public static void getKeys(Context context, String privateaddr) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, NoSuchProviderException {
         privateAddress = privateaddr;
         Credentials credentials = Credentials.create(privateaddr);
         publicAddress = credentials.getAddress();
         try {
-            WalletManager walletManager = null;
-            walletManager.saveWalletData(privateAddress,publicAddress,null);
-        }catch (Exception e){
-            Log.d("Store Data","There is some error while saving the data:\t"+e.getMessage());
+            SecureWalletStorage secureWalletStorage = new SecureWalletStorage(context);
+            secureWalletStorage.saveWallet(privateAddress, publicAddress,"");
+        } catch (Exception e) {
+            Log.d("Store Data", "There is some error while saving the data: " + e.getMessage());
         }
     }
-    public static void getKeyPairFromSeed(String memonics) {
+    public static void getKeyPairFromSeed(Context context,String memonics) {
         byte[] seed = MnemonicUtils.generateSeed(memonics, "");
         Bip32ECKeyPair masKeyPair = Bip32ECKeyPair.generateKeyPair(seed);
         Bip32ECKeyPair derivedKeyPair = Bip32ECKeyPair.deriveKeyPair(masKeyPair, derivationPath);
@@ -102,30 +102,35 @@ public class Wallet {
         publicAddress = credentials.getAddress();
         privateAddress = "0x"+credentials.getEcKeyPair().getPrivateKey().toString(16);
         try {
-            WalletManager walletManager = null;
-            walletManager.saveWalletData(privateAddress,publicAddress,mnemonics);
-        }catch (Exception e){
-            Log.d("Store Data","There is some error while saving the data:\t"+e.getMessage());
+            SecureWalletStorage secureWalletStorage = new SecureWalletStorage(context);
+            secureWalletStorage.saveWallet(privateAddress, publicAddress,mnemonics);
+        } catch (Exception e) {
+            Log.d("Store Data", "There is some error while saving the data: " + e.getMessage());
         }
+
     }
 
-    public static void generateKeyPairWithSeed() {
+    public static void generateKeyPairWithSeed(Context context) {
         byte[] entropy = new byte[16];
         new SecureRandom().nextBytes(entropy);
         String mne = MnemonicUtils.generateMnemonic(entropy);
         byte[] seed = MnemonicUtils.generateSeed(mne, "");
+
         Bip32ECKeyPair masKeyPair = Bip32ECKeyPair.generateKeyPair(seed);
         Bip32ECKeyPair derivedKeyPair = Bip32ECKeyPair.deriveKeyPair(masKeyPair, derivationPath);
         Credentials credentials = Credentials.create(derivedKeyPair);
+
         publicAddress = credentials.getAddress();
-        privateAddress = credentials.getEcKeyPair().getPrivateKey().toString(16);
+        privateAddress = "0x" + credentials.getEcKeyPair().getPrivateKey().toString(16);
         mnemonics = mne;
+
         try {
-            WalletManager walletManager = null;
-            walletManager.saveWalletData(privateAddress,publicAddress,mnemonics);
-        }catch (Exception e){
-            Log.d("Store Data","There is some error while saving the data:\t"+e.getMessage());
+            SecureWalletStorage secureWalletStorage = new SecureWalletStorage(context);
+            secureWalletStorage.saveWallet(privateAddress, publicAddress,"");
+        } catch (Exception e) {
+            Log.d("Store Data", "There is some error while saving the data: " + e.getMessage());
         }
+
     }
 
     public static void fetchTransactionHistory() {

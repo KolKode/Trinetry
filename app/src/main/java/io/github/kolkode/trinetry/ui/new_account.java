@@ -27,7 +27,7 @@ public class new_account extends AppCompatActivity {
         });
         createAccBtn = findViewById(R.id.createaccbtn);
         createAccBtn.setOnClickListener(v -> {
-            Wallet.generateKeyPairWithSeed();
+            Wallet.generateKeyPairWithSeed(this);
             Intent intent = new Intent(new_account.this,dashboard.class);
             startActivity(intent);
         });

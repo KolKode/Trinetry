@@ -27,7 +27,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.send_eth"
-            android:exported="false" /> <!-- Splash Screen Activity -->
+            android:exported="false" />
         <activity
             android:name=".ui.splash_screen"
             android:exported="true"

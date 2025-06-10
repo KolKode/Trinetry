@@ -26,7 +26,6 @@ public class recovery extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_recovery);
 
-        // Find views after layout is set
         submitBtn = findViewById(R.id.subbtn);
         backBtn = findViewById(R.id.backbtn);
 
@@ -64,7 +63,7 @@ public class recovery extends AppCompatActivity {
                     p10txt.getText().toString().toLowerCase().trim()+" "+
                     p11txt.getText().toString().toLowerCase().trim()+" "+
                     p12txt.getText().toString().toLowerCase().trim();
-            Wallet.getKeyPairFromSeed(mnemonics);
+            Wallet.getKeyPairFromSeed(this,mnemonics);
             Wallet.setMnemonics(mnemonics);
             Intent intent=new Intent(recovery.this, dashboard.class);
             startActivity(intent);

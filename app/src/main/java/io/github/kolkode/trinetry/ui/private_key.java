@@ -46,10 +46,9 @@ public class private_key extends AppCompatActivity {
         importbtn.setOnClickListener(v -> {
             String text = entertxt.getText().toString().trim();
             if(Wallet.isValidPrivate(text)){
-//                entertxt.setText(text);
                 Wallet.setPrivateAddress(text);
                 try {
-                    Wallet.getKeys(text);
+                    Wallet.getKeys(this,text);
                 } catch (InvalidAlgorithmParameterException | NoSuchAlgorithmException |
                      NoSuchProviderException e) {
                     Toast.makeText(this,"Something went wrong",Toast.LENGTH_SHORT).show();

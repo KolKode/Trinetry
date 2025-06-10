@@ -8,6 +8,7 @@ import androidx.security.crypto.MasterKey;
 
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -61,12 +62,17 @@ public class SecureWalletStorage {
         ).build();
 
         try (FileInputStream fis = encryptedFile.openFileInput()) {
-            byte[] data = new byte[(int) file.length()];
-            fis.read(data);
-            String content = new String(data, StandardCharsets.UTF_8);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = fis.read(buffer)) != -1) {
+                baos.write(buffer, 0, bytesRead);
+            }
+            String content = baos.toString(StandardCharsets.UTF_8);
             return new JSONObject(content);
         }
     }
+
 
     // Clear the wallet
     public void clear() {
