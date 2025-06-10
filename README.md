@@ -1,3 +1,4 @@
+![Project Logo](./app/src/main/res/drawable/app_logo.png)
 # Trinetry 🚀
 
 Trinetry is a lightweight, native Android Ethereum wallet built with Java.  
