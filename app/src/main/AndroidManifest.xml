@@ -2,12 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
-
-    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -19,51 +19,70 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trinetry"
         tools:targetApi="31">
+
+        <activity
+            android:name=".unlock_pass_bio"
+            android:exported="false" />
+
+        <activity
+            android:name=".pass_bio"
+            android:exported="false" />
+
         <activity
             android:name=".ui.receive_eth"
             android:exported="false" />
+
         <activity
             android:name=".ui.dashboard"
             android:exported="false" />
+
         <activity
             android:name=".ui.send_eth"
             android:exported="false" />
+
+        <!-- Launcher Activity -->
         <activity
             android:name=".ui.splash_screen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ui.welcome_page"
             android:exported="true" />
+
         <activity
             android:name=".ui.new_account"
             android:exported="false" />
+
         <activity
             android:name=".ui.private_key"
             android:exported="false" />
+
         <activity
             android:name=".ui.recovery"
             android:exported="false" />
+
         <activity
             android:name=".ui.import_eth"
             android:exported="false" />
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
-
+        <!-- QR Code Scanner -->
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
             tools:ignore="DiscouragedApi"
             tools:replace="android:screenOrientation" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>
