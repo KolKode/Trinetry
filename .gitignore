@@ -18,3 +18,5 @@ secrets.properties
 local.properties
 *.keystore
 *.jks
+*.apk
+/keystore
