@@ -65,8 +65,9 @@ public class recovery extends AppCompatActivity {
                     p12txt.getText().toString().toLowerCase().trim();
             Wallet.getKeyPairFromSeed(this,mnemonics);
             Wallet.setMnemonics(mnemonics);
-            Intent intent=new Intent(recovery.this, dashboard.class);
+            Intent intent = new Intent(recovery.this, pass_bio.class);
             startActivity(intent);
+            finish();
         });
     }
 }

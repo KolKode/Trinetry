@@ -13,9 +13,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-
+import java.security.InvalidAlgorithmParameterException;
 import java.security.NoSuchAlgorithmException;
-import java.security.*;
+import java.security.NoSuchProviderException;
 
 import io.github.kolkode.trinetry.R;
 import io.github.kolkode.trinetry.utils.Wallet;
@@ -53,8 +53,9 @@ public class private_key extends AppCompatActivity {
                      NoSuchProviderException e) {
                     Toast.makeText(this,"Something went wrong",Toast.LENGTH_SHORT).show();
                 }
-                Intent intent=new Intent(private_key.this, dashboard.class);
+                Intent intent = new Intent(private_key.this, pass_bio.class);
                 startActivity(intent);
+                finish();
             }else {
                 Toast.makeText(this, "Please enter a valid Private Key", Toast.LENGTH_SHORT).show();
             }

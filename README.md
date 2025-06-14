@@ -28,7 +28,7 @@ Built with simplicity, security, and performance in mind.
 1. Clone this repo:
 ```bash
 git clone https://github.com/KolKode/Trinetry.git
-
+```
 
 
 Made with 💚 by https://github.com/KolKode

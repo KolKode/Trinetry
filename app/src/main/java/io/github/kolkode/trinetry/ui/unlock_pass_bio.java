@@ -1,7 +1,5 @@
-package io.github.kolkode.trinetry;
-import android.content.Context;
+package io.github.kolkode.trinetry.ui;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,43 +15,29 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.Executor;
 
-import io.github.kolkode.trinetry.ui.dashboard;
+import io.github.kolkode.trinetry.R;
+import io.github.kolkode.trinetry.utils.AppSecurity;
 
 public class unlock_pass_bio extends AppCompatActivity {
-
-    private EditText passwordInput;
-    private Button unlockWithPasswordButton, biometricButton;
-    private SharedPreferences sharedPreferences;
-
-    private static final String PREF_NAME = "CryptoWalletPrefs";
-    private static final String PASSWORD_HASH_KEY = "password_hash";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unlock_pass_bio);
 
-        sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        passwordInput = findViewById(R.id.passwordInput);
-        unlockWithPasswordButton = findViewById(R.id.unlockWithPasswordButton);
-        biometricButton = findViewById(R.id.biometricButton);
+        EditText passwordInput = findViewById(R.id.passwordInput);
+        Button unlockWithPasswordButton = findViewById(R.id.unlockWithPasswordButton);
+        Button biometricButton = findViewById(R.id.biometricButton);
 
         biometricButton.setOnClickListener(v -> startBiometric());
 
         unlockWithPasswordButton.setOnClickListener(v -> {
-            String enteredPassword = passwordInput.getText().toString().trim();
-            if (enteredPassword.isEmpty()) {
-                Toast.makeText(this, "Enter your password", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            String storedHash = sharedPreferences.getString(PASSWORD_HASH_KEY, "");
-            String enteredHash = hashPassword(enteredPassword);
-
-            if (storedHash.equals(enteredHash)) {
+            AppSecurity security = new AppSecurity(this);
+            String enteredPass = passwordInput.getText().toString();
+            if (security.check(enteredPass)) {
                 unlockSuccess();
             } else {
-                Toast.makeText(this, "Incorrect password", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Incorrect Password", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -114,8 +98,6 @@ public class unlock_pass_bio extends AppCompatActivity {
         }
     }
     private void unlockSuccess() {
-        Toast.makeText(this, "Wallet unlocked", Toast.LENGTH_SHORT).show();
-        // Redirect to wallet home or main screen
         startActivity(new Intent(this, dashboard.class));
         finish();
     }

@@ -68,7 +68,7 @@ public class SecureWalletStorage {
             while ((bytesRead = fis.read(buffer)) != -1) {
                 baos.write(buffer, 0, bytesRead);
             }
-            String content = baos.toString(StandardCharsets.UTF_8);
+            String content = baos.toString("UTF-8");
             return new JSONObject(content);
         }
     }

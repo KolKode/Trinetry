@@ -41,7 +41,7 @@ public class splash_screen extends AppCompatActivity {
 
         new Handler().postDelayed(() -> {
             if (isDataPresent){
-                Intent intent = new Intent(splash_screen.this,dashboard.class);
+                Intent intent = new Intent(splash_screen.this, unlock_pass_bio.class);
                 startActivity(intent);
                 finish();
             }else {
