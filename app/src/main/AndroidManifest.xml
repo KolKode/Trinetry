@@ -55,6 +55,12 @@
         <activity
             android:name=".ui.import_eth"
             android:exported="false" />
+        <activity
+            android:name=".ui.unlock_pass_bio"
+            android:exported="false" />
+        <activity
+            android:name=".ui.pass_bio"
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"
