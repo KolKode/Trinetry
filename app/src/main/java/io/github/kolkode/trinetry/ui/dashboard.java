@@ -12,16 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import io.github.kolkode.trinetry.R;
-//import io.github.kolkode.trinetry.utils.EthTransaction;
-//import io.github.kolkode.trinetry.utils.TransactionAdapter;
 import io.github.kolkode.trinetry.utils.Wallet;
 
 public class dashboard extends AppCompatActivity {
@@ -42,10 +36,10 @@ public class dashboard extends AppCompatActivity {
         send = findViewById(R.id.sendBtn);
         receive=findViewById(R.id.receiveBtn);
         balance = findViewById(R.id.balance);
-        balance.setText("0.00\nETH");
+        balance.setText("0\nETH");
         try {
             new Thread(()->{
-                String eth = "0.00";
+                String eth = "0";
                 try {
                     eth = Wallet.getBalance();
                 } catch (IOException e) {
