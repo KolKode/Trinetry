@@ -1,8 +1,8 @@
 package io.github.kolkode.trinetry.database;
 
 import android.content.Context;
+import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.security.crypto.EncryptedFile;
 import androidx.security.crypto.MasterKey;
 
@@ -20,7 +20,7 @@ public class SecureWalletStorage {
     private final File file;
     private final MasterKey masterKey;
 
-    public SecureWalletStorage(@NonNull Context context) throws Exception {
+    public SecureWalletStorage(Context context) throws Exception {
         this.context = context;
         this.file = new File(context.getFilesDir(), "wallet_data.json");
 
@@ -29,7 +29,6 @@ public class SecureWalletStorage {
                 .build();
     }
 
-    // Save the wallet (all three values securely)
     public void saveWallet(String privateKey, String publicAddress, String mnemonic) throws Exception {
         JSONObject json = new JSONObject();
         json.put("privateKey", privateKey);
@@ -70,6 +69,9 @@ public class SecureWalletStorage {
             }
             String content = baos.toString("UTF-8");
             return new JSONObject(content);
+        } catch (Exception e) {
+            Log.e("File opening error", e.getMessage());
+            return null;
         }
     }
 

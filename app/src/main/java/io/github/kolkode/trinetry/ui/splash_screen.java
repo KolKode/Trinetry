@@ -40,15 +40,14 @@ public class splash_screen extends AppCompatActivity {
         }
 
         new Handler().postDelayed(() -> {
+            Intent intent;
             if (isDataPresent){
-                Intent intent = new Intent(splash_screen.this, unlock_pass_bio.class);
-                startActivity(intent);
-                finish();
+                intent = new Intent(splash_screen.this, unlock_pass_bio.class);
             }else {
-                Intent intent = new Intent(splash_screen.this, welcome_page.class);
-                startActivity(intent);
-                finish();
+                intent = new Intent(splash_screen.this, welcome_page.class);
             }
+            startActivity(intent);
+            finish();
         }, SPLASH_DELAY);
     }
 }
