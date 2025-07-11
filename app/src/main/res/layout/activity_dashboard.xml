@@ -101,13 +101,13 @@
         android:id="@+id/transactionsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="108dp"
         android:text="Recent Transactions"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sendLayout" />
 
@@ -215,16 +215,18 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTransactionHistory"
-        android:layout_width="379dp"
-        android:layout_height="248dp"
+        android:layout_width="380dp"
+        android:layout_height="356dp"
         android:layout_marginStart="24dp"
         android:padding="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/transactionsTitle"
-        app:layout_constraintVertical_bias="0.319" />  <!-- fixed height so it scrolls only here -->
+        app:layout_constraintVertical_bias="0.512" />
+
+    <!-- fixed height so it scrolls only here -->
     android:scrollbars="vertical"
     android:layout_marginTop="8dp"/>
 

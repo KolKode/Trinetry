@@ -1,6 +1,7 @@
 package io.github.kolkode.trinetry.ui;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,11 +18,8 @@ import androidx.core.content.ContextCompat;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 
-import org.web3j.utils.Convert;
-
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -33,51 +31,64 @@ import io.github.kolkode.trinetry.utils.Wallet;
 public class send_eth extends AppCompatActivity {
     EthTransfer ethTransfer = new EthTransfer();
     TextView myAddress,baseGas,safeGas,proposedGas,fastGas,transactionHash;
-    EditText gasPrice,sendingAmmount,sendingAddress;
+    private final ActivityResultLauncher<ScanOptions> qrCodeLauncher =
+            registerForActivityResult(new ScanContract(), result -> {
+                var contents = result.getContents();
+                if (contents == null) {
+                    Toast.makeText(this, "Cancelled", Toast.LENGTH_SHORT).show();
+                } else {
+                    setResult(contents);
+                }
+            });
     Button transferButton;
 
     private ActivitySendEthBinding binding;
-
     private final ActivityResultLauncher<String> requestPermissionLauncher =
-        registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-            if (isGranted) {
-                showCamera();
-            } else {
-                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
-            }
-        });
-    private final ActivityResultLauncher<ScanOptions> qrCodeLauncher =
-        registerForActivityResult(new ScanContract(), result -> {
-            if (result.getContents() == null) {
-                Toast.makeText(this, "Cancelled", Toast.LENGTH_SHORT).show();
-            } else {
-                setResult(result.getContents());
-            }
-        });
-    private void setResult(String contents) {
-        binding.sendingAddress.setText(extractEthereumAddress(contents));
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+                if (isGranted) {
+                    showCamera();
+                } else {
+                    Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+    private String extractEthereumAddress(String input) {
+        Pattern pattern = Pattern.compile("0x[a-fA-F0-9]{40}");
+        Matcher matcher = pattern.matcher(input);
+        if (matcher.find()) {
+            return matcher.group();
+        }
+        return null;
     }
 
-    private void showCamera() {
-        ScanOptions options = new ScanOptions();
-        options.setDesiredBarcodeFormats(ScanOptions.QR_CODE);
-        options.setPrompt("Scan QR code");
-        options.setCameraId(0);
-        options.setBeepEnabled(false);
-        options.setBarcodeImageEnabled(true);
-        options.setOrientationLocked(true);
-        qrCodeLauncher.launch(options);
+    public boolean isPositiveDecimal(String input) {
+        try {
+            BigDecimal value = new BigDecimal(input.trim());
+            return value.compareTo(BigDecimal.ZERO) > 0;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
+    private void checkPermissionAndShowCamera() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+                == PackageManager.PERMISSION_GRANTED) {
+            showCamera();
+        } else if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)) {
+            Toast.makeText(this, "Camera permission required", Toast.LENGTH_SHORT).show();
+        } else {
+            requestPermissionLauncher.launch(Manifest.permission.CAMERA);
+        }
+    }
+    EditText gasPrice, sendingAmount, sendingAddress;
+
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySendEthBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        binding.scanbtn.setOnClickListener(view -> {
-            checkPermissionAndShowCamera();
-        });
+        binding.scanbtn.setOnClickListener(view -> checkPermissionAndShowCamera());
         myAddress=findViewById(R.id.myAddress);
         baseGas=findViewById(R.id.baseGas);
         safeGas=findViewById(R.id.safeGas);
@@ -85,7 +96,7 @@ public class send_eth extends AppCompatActivity {
         fastGas=findViewById(R.id.fastGas);
         gasPrice=findViewById(R.id.gasPrice);
         sendingAddress=findViewById(R.id.sendingAddress);
-        sendingAmmount=findViewById(R.id.sendingAmmount);
+        sendingAmount = findViewById(R.id.sendingAmmount);
         transferButton=findViewById(R.id.transferBtn);
         transactionHash=findViewById(R.id.transactionHash);
 
@@ -108,7 +119,7 @@ public class send_eth extends AppCompatActivity {
         transferButton.setOnClickListener(v -> {
             String sAdd = sendingAddress.getText().toString().trim();
             String gP = gasPrice.getText().toString().trim();
-            String sA = sendingAmmount.getText().toString().trim();
+            String sA = sendingAmount.getText().toString().trim();
             if (gP.isEmpty()) {
                 Toast.makeText(this, "Please enter the gas price", Toast.LENGTH_LONG).show();
             } else if (!isPositiveDecimal(gP)) {
@@ -148,32 +159,18 @@ public class send_eth extends AppCompatActivity {
         });
     }
 
-    private String extractEthereumAddress(String input) {
-        Pattern pattern = Pattern.compile("0x[a-fA-F0-9]{40}");
-        Matcher matcher = pattern.matcher(input);
-        if (matcher.find()) {
-            return matcher.group();
-        }
-        return null;
+    private void setResult(String contents) {
+        binding.sendingAddress.setText(extractEthereumAddress(contents));
     }
 
-    public boolean isPositiveDecimal(String input) {
-        try {
-            BigDecimal value = new BigDecimal(input.trim());
-            return value.compareTo(BigDecimal.ZERO) > 0;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
-    private void checkPermissionAndShowCamera() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-                == PackageManager.PERMISSION_GRANTED) {
-            showCamera();
-        } else if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)) {
-            Toast.makeText(this, "Camera permission required", Toast.LENGTH_SHORT).show();
-        } else {
-            requestPermissionLauncher.launch(Manifest.permission.CAMERA);
-        }
+    private void showCamera() {
+        ScanOptions options = new ScanOptions();
+        options.setDesiredBarcodeFormats(ScanOptions.QR_CODE);
+        options.setPrompt("Scan QR code");
+        options.setCameraId(0);
+        options.setBeepEnabled(false);
+        options.setBarcodeImageEnabled(true);
+        options.setOrientationLocked(true);
+        qrCodeLauncher.launch(options);
     }
 }

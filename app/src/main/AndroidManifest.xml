@@ -21,15 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trinetry"
         tools:targetApi="31">
-        <activity
-            android:name=".ui.receive_eth"
-            android:exported="false" />
-        <activity
-            android:name=".ui.dashboard"
-            android:exported="false" />
-        <activity
-            android:name=".ui.send_eth"
-            android:exported="false" />
+
         <activity
             android:name=".ui.splash_screen"
             android:exported="true"
@@ -40,6 +32,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.receive_eth"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".ui.send_eth"
+            android:exported="false" />
         <activity
             android:name=".ui.welcome_page"
             android:exported="true" />
