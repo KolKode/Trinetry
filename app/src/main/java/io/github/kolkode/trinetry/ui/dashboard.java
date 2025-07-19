@@ -1,5 +1,6 @@
 package io.github.kolkode.trinetry.ui;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,9 +20,11 @@ import io.github.kolkode.trinetry.R;
 import io.github.kolkode.trinetry.utils.Wallet;
 
 public class dashboard extends AppCompatActivity {
-    ImageButton send,receive;
+    ImageButton send,receive,set_btn;
+
     TextView balance;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +39,12 @@ public class dashboard extends AppCompatActivity {
         send = findViewById(R.id.sendBtn);
         receive=findViewById(R.id.receiveBtn);
         balance = findViewById(R.id.balance);
+        set_btn = findViewById(R.id.set_btn);
+
+        set_btn.setOnClickListener(v ->{
+            startActivity(new Intent(dashboard.this,dash_setting.class));
+        });
+
         balance.setText("0\nETH");
         try {
             new Thread(()->{

@@ -4,12 +4,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
-
-    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -21,7 +20,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trinetry"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.show_private"
+            android:exported="false" />
+        <activity
+            android:name=".ui.show_recovery"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dash_setting"
+            android:exported="false" />
         <activity
             android:name=".ui.splash_screen"
             android:exported="true"
