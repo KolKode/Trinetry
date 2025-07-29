@@ -77,218 +77,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="377dp"
-        android:layout_height="417dp"
-        android:layout_margin="06sp"
-        android:layout_marginBottom="100dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/guideline13"
-        app:layout_constraintStart_toStartOf="@+id/guideline11"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.0">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="06sp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/seed1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="06sp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="1"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A" />
-
-            <EditText
-                android:id="@+id/seed2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="06sp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="2"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="06sp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/seed3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="06sp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="3"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A" />
-
-            <EditText
-                android:id="@+id/seed4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="06sp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="4"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="06sp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/seed5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="06sp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="5"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A" />
-
-            <EditText
-                android:id="@+id/seed6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="06sp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="6"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="06sp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/seed7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="06sp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="7"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A" />
-
-            <EditText
-                android:id="@+id/seed8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="06sp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="8"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="06sp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/seed9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="06sp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="9"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A" />
-
-            <EditText
-                android:id="@+id/seed10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="06sp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="10"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="06sp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/seed11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="06sp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="11"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A" />
-
-            <EditText
-                android:id="@+id/seed12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="06sp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="12"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColor="#D1CED9"
-                android:textColorHint="#9B9A9A" />
-        </LinearLayout>
-    </LinearLayout>
-
     <Button
         android:id="@+id/backbtn"
         android:layout_width="102dp"
@@ -319,6 +107,16 @@ If lost or shared, you may lose access permanently. We will never ask for it.."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView4" />
+
+    <TextView
+        android:id="@+id/showRecoveryBox"
+        android:layout_width="360dp"
+        android:layout_height="183dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

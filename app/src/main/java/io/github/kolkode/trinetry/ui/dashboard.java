@@ -38,40 +38,14 @@ public class dashboard extends AppCompatActivity {
 
         send = findViewById(R.id.sendBtn);
         receive=findViewById(R.id.receiveBtn);
-        balance = findViewById(R.id.balance);
         set_btn = findViewById(R.id.set_btn);
+        balance = findViewById(R.id.balance);
 
         set_btn.setOnClickListener(v ->{
             startActivity(new Intent(dashboard.this,dash_setting.class));
         });
 
-        balance.setText("0\nETH");
-        try {
-            new Thread(()->{
-                String eth = "0";
-                try {
-                    eth = Wallet.getBalance();
-                } catch (IOException e) {
-                    Toast.makeText(this,"Problem to get the Balance",Toast.LENGTH_SHORT).show();
-                }
-                String finalEth = eth;
-                runOnUiThread(() -> {
-                    Wallet.balance = finalEth;
-                    balance.setText(finalEth + "\nETH");
-                });
-            }).start();
-        } catch (Exception e) {
-            Log.d("DashBoard_GetBalance",String.valueOf(e.getMessage()));
-            Toast.makeText(this,"Error while fetching the Balance",Toast.LENGTH_SHORT).show();
-        }
-        send.setOnClickListener(v -> {
-            Intent intent = new Intent(dashboard.this, send_eth.class);
-            startActivity(intent);
-        });
-        receive.setOnClickListener(v -> {
-            Intent intent=new Intent(dashboard.this,receive_eth.class);
-            startActivity(intent);
-        });
+        refresh();
 
 
 //        RecyclerView rvTransactionHistory = findViewById(R.id.rvTransactionHistory);
@@ -83,5 +57,35 @@ public class dashboard extends AppCompatActivity {
 //// Create adapter and set to RecyclerView
 //        TransactionAdapter adapter = new TransactionAdapter(transactionList);
 //        rvTransactionHistory.setAdapter(adapter);
+    }
+
+    private void refresh() {
+        balance.setText("0\nETH");
+        try {
+            new Thread(() -> {
+                String eth = "0";
+                try {
+                    eth = Wallet.getBalance();
+                } catch (IOException e) {
+                    Toast.makeText(this, "Problem to get the Balance", Toast.LENGTH_SHORT).show();
+                }
+                String finalEth = eth;
+                runOnUiThread(() -> {
+                    Wallet.balance = finalEth;
+                    balance.setText(finalEth + "\nETH");
+                });
+            }).start();
+        } catch (Exception e) {
+            Log.d("DashBoard_GetBalance", String.valueOf(e.getMessage()));
+            Toast.makeText(this, "Error while fetching the Balance", Toast.LENGTH_SHORT).show();
+        }
+        send.setOnClickListener(v -> {
+            Intent intent = new Intent(dashboard.this, send_eth.class);
+            startActivity(intent);
+        });
+        receive.setOnClickListener(v -> {
+            Intent intent = new Intent(dashboard.this, receive_eth.class);
+            startActivity(intent);
+        });
     }
 }
