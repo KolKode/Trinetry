@@ -20,7 +20,7 @@ import io.github.kolkode.trinetry.R;
 import io.github.kolkode.trinetry.utils.Wallet;
 
 public class dashboard extends AppCompatActivity {
-    ImageButton send,receive,set_btn;
+    ImageButton send,receive,set_btn,refreshBtn;
 
     TextView balance;
 
@@ -39,7 +39,10 @@ public class dashboard extends AppCompatActivity {
         send = findViewById(R.id.sendBtn);
         receive=findViewById(R.id.receiveBtn);
         set_btn = findViewById(R.id.set_btn);
+        refreshBtn = findViewById(R.id.receiveBtn);
         balance = findViewById(R.id.balance);
+
+        refreshBtn.setOnClickListener(v -> refresh());
 
         set_btn.setOnClickListener(v ->{
             startActivity(new Intent(dashboard.this,dash_setting.class));
